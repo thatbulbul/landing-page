@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onCTAClick }: HeroProps) {
   return (
-    <section className="relative pt-8 pb-12 md:pt-22 md:pb-28 bg-gradient-to-b from-background via-background to-muted overflow-hidden">
+    <section className="relative pt-25 pb-12 md:pt-29 md:pb-28 bg-gradient-to-b from-background via-background to-muted overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
@@ -48,7 +48,7 @@ export default function Hero({ onCTAClick }: HeroProps) {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 max-w-3xl mx-auto px-2">
+          <div className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 max-w-3xl mx-auto px-2">
             {[
               { icon: TrendingUp, text: '+25-30% More Booked Appointments', color: 'text-accent' },
               { icon: Clock, text: 'Results in 30 Days or Money Back', color: 'text-accent' },
