@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 
 interface StickyButtonProps {
   onClick: () => void;
@@ -12,8 +12,8 @@ export default function StickyButton({ onClick }: StickyButtonProps) {
         onClick={onClick}
         className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all rounded-full px-4 md:px-6 py-2.5 md:py-3 h-auto text-xs md:text-base"
       >
-        Get Free Audit
-        <ArrowRight className="ml-1.5 h-3 w-3 md:h-4 md:w-4" />
+        <MessageCircle className="h-4 w-4 md:mr-1.5 md:h-4 md:w-4" />
+        <span className="hidden md:inline">Get more details</span>
       </Button>
     </div>
   );

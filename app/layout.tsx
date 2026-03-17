@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -44,7 +43,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -107,7 +105,6 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
       </body>
     </html>
   )
