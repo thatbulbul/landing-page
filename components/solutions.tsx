@@ -46,33 +46,29 @@ export default function Solutions() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {solutions.map((solution) => {
             const Icon = solution.icon;
             return (
-              <div 
-                key={solution.title} 
-                className="bg-card border border-border rounded-lg p-6 md:p-8 hover:shadow-lg hover:border-accent/50 transition-all group"
+              <div
+                key={solution.title}
+                className="bg-card border border-border rounded-lg p-5 md:p-8 hover:shadow-lg hover:border-accent/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <Icon className="h-6 w-6 text-accent" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-accent/20 transition-colors">
+                  <Icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {solution.title}
-                </h3>
-                <p className="text-foreground/60">
-                  {solution.description}
-                </p>
+                <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{solution.title}</h3>
+                <p className="text-sm text-foreground/60">{solution.description}</p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-primary/10 to-foreground/5 rounded-lg border border-primary/20 p-8 md:p-12 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-3">
+        <div className="mt-10 md:mt-16 bg-gradient-to-r from-primary/10 to-foreground/5 rounded-lg border border-primary/20 p-6 md:p-12 text-center">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 md:mb-3">
             Ready to Increase Your Booked Appointments?
           </h3>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-sm md:text-lg text-foreground/70">
             Get your free GHL Automation Audit today and discover exactly what's holding you back.
           </p>
         </div>

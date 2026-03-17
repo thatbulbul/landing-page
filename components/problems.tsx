@@ -63,34 +63,34 @@ export default function Problems() {
   return (
     <section id="problems" className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <span className="inline-block px-3 py-1.5 rounded-full bg-red-100 text-red-700 text-xs md:text-sm font-bold mb-3">
             COMMON PROBLEMS
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4 text-pretty">
+          <h2 className="text-3xl md:text-5xl font-black text-foreground mb-3 text-pretty">
             Are You Losing Opportunities Like This?
           </h2>
-          <p className="text-xl text-foreground/70 max-w-3xl mx-auto font-semibold">
+          <p className="text-base md:text-xl text-foreground/70 max-w-3xl mx-auto font-semibold px-2">
             87% of agencies leave money on the table with poor GoHighLevel automation setup
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {problems.map((problem, idx) => {
             const Icon = problem.icon;
             return (
               <AnimatedCard key={problem.title} delay={idx * 120}>
-                <div className="bg-white border-2 border-border rounded-xl p-6 md:p-8 hover:shadow-xl transition-all hover:border-primary/50 relative">
+                <div className="bg-white border-2 border-border rounded-xl p-5 md:p-8 hover:shadow-xl transition-all hover:border-primary/50 relative">
                   <div className="absolute -top-3 -left-3 w-6 h-6 bg-red-500 rounded-full text-white font-black flex items-center justify-center text-xs">
                     ✕
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-7 w-7 text-primary" />
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-11 h-11 md:w-14 md:h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-black text-foreground mb-2">{problem.title}</h3>
-                      <p className="text-foreground/70 font-semibold">{problem.description}</p>
+                      <h3 className="text-base md:text-xl font-black text-foreground mb-1 md:mb-2">{problem.title}</h3>
+                      <p className="text-sm text-foreground/70 font-semibold">{problem.description}</p>
                     </div>
                   </div>
                 </div>

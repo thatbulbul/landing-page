@@ -27,10 +27,7 @@ function TypewriterInput({ id, name, type = 'text', placeholder, required, value
     intervalRef.current = setInterval(() => {
       i++;
       setDisplayed(placeholder.slice(0, i));
-      if (i >= placeholder.length) {
-        clearInterval(intervalRef.current!);
-        setTyping(false);
-      }
+      if (i >= placeholder.length) { clearInterval(intervalRef.current!); setTyping(false); }
     }, 45);
   };
 
@@ -78,13 +75,13 @@ export default function LeadForm({ onSuccess, compact }: { onSuccess?: () => voi
 
   if (submitted) {
     return (
-      <div className="max-w-md mx-auto text-center py-10">
+      <div className="max-w-md mx-auto text-center py-10 px-4">
         <div className="w-14 h-14 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center animate-bounce">
           <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-black text-foreground mb-2">🎉 Audit Scheduled!</h3>
+        <h3 className="text-xl md:text-2xl font-black text-foreground mb-2">🎉 Audit Scheduled!</h3>
         <p className="text-foreground/60 text-sm">Your spot is reserved. Our experts will reach out within 24 hours.</p>
       </div>
     );
@@ -97,7 +94,7 @@ export default function LeadForm({ onSuccess, compact }: { onSuccess?: () => voi
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
             <Label htmlFor="name" className="text-foreground font-semibold text-sm">Full Name *</Label>
-            <TypewriterInput id="name" name="name" type="text" placeholder="John Smith" required value={formData.name} onChange={handleChange} className={inputCls} />
+            <TypewriterInput id="name" name="name" placeholder="John Smith" required value={formData.name} onChange={handleChange} className={inputCls} />
           </div>
           <div className="space-y-1">
             <Label htmlFor="email" className="text-foreground font-semibold text-sm">Email *</Label>
@@ -124,40 +121,40 @@ export default function LeadForm({ onSuccess, compact }: { onSuccess?: () => voi
     );
   }
 
-  /* ── FULL (contact section) — two-column ── */
+  /* ── FULL (contact section) ── */
   return (
     <div className="max-w-5xl mx-auto px-4">
-      <div className="bg-card border-2 border-primary/30 rounded-2xl shadow-lg p-8 md:p-10">
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+      <div className="bg-card border-2 border-primary/30 rounded-2xl shadow-lg p-5 md:p-10">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
 
           {/* Left: heading */}
           <div className="md:w-2/5 flex-shrink-0">
-            <div className="inline-block px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-4">
+            <div className="inline-block px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3">
               Claim Your Free Audit
             </div>
-            <h2 className="text-3xl font-black text-foreground mb-3 leading-tight text-pretty">
+            <h2 className="text-2xl md:text-3xl font-black text-foreground mb-2 leading-tight text-pretty">
               Tell Us About Your GHL Setup
             </h2>
-            <p className="text-foreground/60 text-sm mb-6">
+            <p className="text-foreground/60 text-sm mb-4">
               Answer these quick questions and we'll schedule your personalized audit with zero obligation.
             </p>
             <div className="h-1 w-12 bg-primary rounded-full" />
           </div>
 
           {/* Right: form */}
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div className="space-y-1">
                   <Label htmlFor="name" className="text-foreground font-semibold text-sm">Full Name *</Label>
-                  <TypewriterInput id="name" name="name" type="text" placeholder="John Smith" required value={formData.name} onChange={handleChange} className={inputCls} />
+                  <TypewriterInput id="name" name="name" placeholder="John Smith" required value={formData.name} onChange={handleChange} className={inputCls} />
                 </div>
                 <div className="space-y-1">
                   <Label htmlFor="email" className="text-foreground font-semibold text-sm">Email *</Label>
                   <TypewriterInput id="email" name="email" type="email" placeholder="john@example.com" required value={formData.email} onChange={handleChange} className={inputCls} />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div className="space-y-1">
                   <Label htmlFor="phone" className="text-foreground font-semibold text-sm">Phone Number *</Label>
                   <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" required value={formData.phone} onChange={handleChange} className={inputCls} />
@@ -179,7 +176,7 @@ export default function LeadForm({ onSuccess, compact }: { onSuccess?: () => voi
                 <Label htmlFor="problem" className="text-foreground font-semibold text-sm">Biggest Challenge Right Now?</Label>
                 <textarea id="problem" name="problem" placeholder="Tell us about your biggest automation challenge..." value={formData.problem} onChange={handleChange} rows={2} className="w-full px-0 py-2 text-sm border-0 border-b border-border bg-background text-foreground placeholder-foreground/40 focus:ring-0 focus:border-primary outline-none transition resize-none" />
               </div>
-              <Button type="submit" disabled={isLoading} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black py-5 text-base rounded-lg h-auto shadow-lg transition-all mt-1">
+              <Button type="submit" disabled={isLoading} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black py-4 md:py-5 text-sm md:text-base rounded-lg h-auto shadow-lg transition-all mt-1">
                 {isLoading ? <><Spinner className="mr-2 h-4 w-4" />Scheduling...</> : '✓ Schedule My Free Audit'}
               </Button>
               <p className="text-xs text-foreground/50 text-center">No credit card required • 100% free</p>
